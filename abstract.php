@@ -12,11 +12,53 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!-- abstract classes are those which must be implented in subclasses its adhora classes -->
 	<div class="container">
-		
-	</div>
 	<?php 
+abstract class Employee {
+    protected $firstName;
+    protected $lastName;
+    public function getFullName(){
+        return $this->firstName.' '.$this->lastName;
+    }
+    abstract function getMonthlySalary();
+}
+
+class fullTimeEmployee extends Employee{
+    protected $annualSalary;
+    public function __construct($firstName,$lastName) {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+    }
+
+    public function getMonthlySalary(){
+        return $this->annualSalary/12;
+    }
+}
+
+class contractEmployee extends Employee{
+    protected $hour;
+    protected $hourlyRate;
+    
+    public function __construct($firstName,$lastName) {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+    }
+
+    public function getMonthlySalary(){
+        return $this->hour*$this->hourlyRate;
+    }
+}
+
+$fullTimeEmployee = new fullTimeEmployee('FullTime','Employee');
+echo "<h4>Name: ".$fullTimeEmployee->getFullName()."</h4>";
+echo "<h4>Salary: ".$fullTimeEmployee->getMonthlySalary()."</h4>";
+echo "<hr />";
+$contractEmployee = new contractEmployee('Cotract','Employee');
+echo "<h4>Name: ".$contractEmployee->getFullName()."</h4>";
+echo "<h4>Salary: ".$contractEmployee->getMonthlySalary()."</h4>";
 
 	 ?>
+	 	</div>
 </body>
 </html>
