@@ -16,7 +16,9 @@ ini_set('display_errors', 1);
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
-
+<!--Encapsulation is a class where we can restrict accession of data members and methodos 
+for that we use public protected private and so on
+-->
 <body>
     <form method="post" action="<?=$_SERVER['PHP_SELF']?>">
         <div class="container">
