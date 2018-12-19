@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!-- interface classes are just declare its structure its doest not containe data member ,it must be in public , it can implements more than one parent classes and there is no constructor available in this interface available in -->
+    <!-- interface classes are just declare its structure its doest not containe data member ,it must be in public , it can implements more than one parent classes and there is no constructor available in this interface available in there is no instiation of interface-->
     <div class="container">
         <?php 
 interface Employee {

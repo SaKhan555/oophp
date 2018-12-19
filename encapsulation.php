@@ -44,7 +44,7 @@ ini_set('display_errors', 1);
 		return $this->model;
 	}
 
-		protected function getPrice(){
+	protected function getPrice(){
 		return $this->price;
 	}
 

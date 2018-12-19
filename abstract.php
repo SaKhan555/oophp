@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!-- abstract classes are those which must be implented in subclasses its adhora classes -->
+<!-- abstract classes are those which must be implented in subclasses its adhora classes its contain data member its function may have body etc  and it can not be instanciate -->
 	<div class="container">
 	<?php 
 abstract class Employee {
@@ -25,7 +25,7 @@ abstract class Employee {
 }
 
 class fullTimeEmployee extends Employee{
-    protected $annualSalary;
+    protected $annualSalary = 1200000;
     public function __construct($firstName,$lastName) {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -37,8 +37,8 @@ class fullTimeEmployee extends Employee{
 }
 
 class contractEmployee extends Employee{
-    protected $hour;
-    protected $hourlyRate;
+    protected $hour = 150;
+    protected $hourlyRate = 500;
     
     public function __construct($firstName,$lastName) {
         $this->firstName = $firstName;
