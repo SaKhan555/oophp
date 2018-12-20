@@ -29,7 +29,7 @@ According to the Polymorphism principle, methods in different classes that do si
 		<form action = "<?=$_SERVER['PHP_SELF']?>" method="POST" accept-charset="utf-8">
 				<div class="row">
 			<div class="col-md-6">
-				<h5>Full Time</h5><hr />
+				<h5 class="alert alert-success">Full Time</h5><hr />
 				<div class="form-group">
 					<label>Name</label>
 					<input type="text" class="form-control" name="name" placeholder="Name">		
@@ -40,7 +40,7 @@ According to the Polymorphism principle, methods in different classes that do si
 				</div>
 			</div>			
 			<div class="col-md-6">
-				<h5>Hours Based Employee</h5><hr />
+				<h5 class="alert alert-success">Hours Based Employee</h5><hr />
 				<div class="form-group">
 					<label>Name</label>
 					<input type="text" class="form-control" name="HBEname" placeholder="Name">		
@@ -94,23 +94,25 @@ According to the Polymorphism principle, methods in different classes that do si
 				$this->hourRate = $hourRate;
 				$this->extraPayment = $extraPayment;
 			}
+
 			public function getEmployeeDetails($name){
 				return $this->name = $name;
 			}
+
 			public function monthlySalary(){
 				$salary = ($this->hours)*($this->hourRate)+($this->extraPayment);
 				return $salary;
 			}	
 		}
 		if(isset($_POST['name'])){
-				$objFullTimeEmployee = new fullTimeEmployee($_POST['salary'],$_POST['xtraPayment']);	
-				$objhourBasedEmployee = new hourBasedEmployee($_POST['hours'],$_POST['hourRate'],$_POST['HBExtraPayment']);
+		$objFullTimeEmployee = new fullTimeEmployee($_POST['salary'],$_POST['xtraPayment']);	
+		$objhourBasedEmployee = new hourBasedEmployee($_POST['hours'],$_POST['hourRate'],$_POST['HBExtraPayment']);
 		?>
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6 alert alert-success">
 		<label>Name: </label><?= $objFullTimeEmployee->getEmployeeDetails($_POST['name']); ?><br />
 		<label>Salary: </label><?= $objFullTimeEmployee->monthlySalary(); ?></div>
-		<div class="col-md-6">
+		<div class="col-md-6 alert alert-success">
 		<label>Name: </label><?= $objhourBasedEmployee->getEmployeeDetails($_POST['HBEname']); ?><br />
 		<label>Salary: </label><?= $objhourBasedEmployee->monthlySalary(); ?></div></div>
 	</div>	
