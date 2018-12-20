@@ -44,9 +44,10 @@
 				    use Profile, Salary 
 				    {
 				    	Profile::getSalary insteadof Salary;
+				    	Salary::getSalary as grossSalary;
 				    }
 				public function getDetails(){
-					return $this->getName("Ali")."<br /> ".$this->getSalary(50000);
+					return "Name: ".$this->getName("Ali")."<br /> GrossSalary:  ".$this->grossSalary(60000)."<br /> Net Salary: ".$this->getSalary(50000);
 				}
 		}
 
