@@ -26,18 +26,20 @@ ini_set('display_errors', 1);
 		<?php
 		interface Employee {
 			public function monthlySalary();
-			public function getEmployeeDetails();
+			public function getEmployeeDetails($name);
 		}
 		class fullTimeEmployee implements Employee {
+			private $name;
 			private $salary;
 			private $extraPayment;
+
 
 			public function __construct($salary,$extraPayment){
 				$this->salary = $salary;
 				$this->extraPayment = $extraPayment;
 			} 
-			public function getEmployeeDetails(){
-				echo 'John Doe';
+			public function getEmployeeDetails($name){
+				return $this->name = $name;
 			}
 
 			public function monthlySalary(){
@@ -46,6 +48,7 @@ ini_set('display_errors', 1);
 			}	
 		}	
 		class hourBasedEmployee implements Employee {
+			private $name;
 			private $hours;
 			private $hourRate;
 			private $extraPayment;
@@ -55,11 +58,9 @@ ini_set('display_errors', 1);
 				$this->hourRate = $hourRate;
 				$this->extraPayment = $extraPayment;
 			}
-
-			public function getEmployeeDetails(){
-				echo 'Tony Stark';
+			public function getEmployeeDetails($name){
+				return $this->name = $name;
 			}
-
 			public function monthlySalary(){
 				$salary = ($this->hours)*($this->hourRate)+($this->extraPayment);
 				return $salary;
@@ -69,10 +70,10 @@ $objFullTimeEmployee = new fullTimeEmployee(50000,5000);
 $objhourBasedEmployee = new hourBasedEmployee(90,1000,10000);
 ?>
 <h4>Full Time Employee</h4><hr />
-<label>Name: </label><?= $objFullTimeEmployee->getEmployeeDetails(); ?><br />
+<label>Name: </label><?= $objFullTimeEmployee->getEmployeeDetails("John Doe"); ?><br />
 <label>Salary: </label><?= $objFullTimeEmployee->monthlySalary(); ?>
 <h4>Hours Based Employee</h4><hr />
-<label>Name: </label><?= $objhourBasedEmployee->getEmployeeDetails(); ?><br />
+<label>Name: </label><?= $objhourBasedEmployee->getEmployeeDetails("Tony Stark"); ?><br />
 <label>Salary: </label><?= $objhourBasedEmployee->monthlySalary(); ?>
 	</div>
 </div>
