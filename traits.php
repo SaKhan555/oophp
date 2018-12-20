@@ -14,30 +14,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!--Multiple Traits are used in a single class its like multiple classes inheritance-->
+	<!--Multiple Traits are used in a single class its like multiple classes inheritance and we cant instantiate traits classes-->
 
 	<div class="container">
 		<h4>Traits</h4>
 		<?php
-		trait Base{
-			public function traitMethod(){
-				return "traitBase Class Method";
+		trait Profile{
+			private $name;
+			public function getName($name){
+				return $this->name = $name;
 			}
 		}
-		trait Base2{
-			public function traitMethod2(){
-				return "traitBase2 Class Method2";
+
+		trait Salary{
+			private $salary;
+			public function getSalary($salary){
+				return $this->salary = $salary;
 			}
 		}
-		class Child{
-				use Base,Base2;
-				public function getTraitsMethods(){
-					return $this->traitMethod()."<br /> ".$this->traitMethod2();
+
+		class allDetails{
+				use Profile,Salary;
+				public function getDetails(){
+					return $this->getName("Ali")."<br /> ".$this->getSalary(50000);
 				}
 		}
 
-		$objChild = new Child();
-		echo $objChild->getTraitsMethods();
+		$objAllDetails = new allDetails;
+		echo $objAllDetails->getDetails();
 
 		?>
 	</div>
