@@ -9,6 +9,9 @@ https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-a
 php the right way
 https://phptherightway.com/
 
+php pattern 
+https://medium.com/@ivorobioff/the-5-most-common-design-patterns-in-php-applications-7f33b6b7d8d6
+
 Entertaiment:
 https://www.youtube.com/watch?v=w7JRWHCKkIY
 https://soundcloud.com/search?q=shah%20farooq%20songs
